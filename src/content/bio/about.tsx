@@ -44,15 +44,11 @@ export default function About({ title, description }: AboutProps) {
           </p>
           
           <p>
-            그래서 시간이 흘러 이 시기를 되돌아 보았을 때 '아, 그 때가 AI혁명이 아니라 컨텐츠 혁명의 시기였구나'라는 것을 모두가 알게 될 것입니다.
+            그렇게 시간이 흘러 이 시기를 되돌아 보았을 때 '아, 그 때가 AI혁명이 아니라 컨텐츠 혁명의 시기였구나'라는 것을 모두가 알게 될 것입니다.
           </p>
           
           <p>
             그리고 그러한 컨텐츠에 대한 Ownership을 증명할 수 있는 Web3 역시 따라오는 과정이라고 생각합니다.
-          </p>
-          
-          <p>
-            비록 지금은 모든 기술과 지능이 Web3, Creator Economy가 아닌 AI 영역에 집중되고 있지만요.
           </p>
         </div>
       </section>
