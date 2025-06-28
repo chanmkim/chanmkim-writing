@@ -3,7 +3,13 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-async function getProjects() {
+interface Project {
+  title: string
+  description: string
+  slug: string
+}
+
+async function getProjects(): Promise<Project[]> {
   const projectsDirectory = path.join(process.cwd(), 'src/content/projects')
   const fileNames = fs.readdirSync(projectsDirectory)
   
@@ -13,7 +19,8 @@ async function getProjects() {
     const { data } = matter(fileContents)
     
     return {
-      ...data,
+      title: data.title as string,
+      description: data.description as string,
       slug: fileName.replace(/\.mdx$/, ''),
     }
   })
@@ -29,7 +36,7 @@ export default async function ProjectsPage() {
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold mb-8">프로젝트</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project: any) => (
+          {projects.map((project: Project) => (
             <Link
               key={project.slug}
               href={`/projects/${project.slug}`}

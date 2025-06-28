@@ -14,8 +14,15 @@ async function getProject(slug: string) {
   }
 }
 
-export default async function ProjectPage({ params }: { params: { slug: string } }) {
-  const { meta, content } = await getProject(params.slug)
+interface PageProps {
+  params: Promise<{
+    slug: string
+  }>
+}
+
+export default async function ProjectPage({ params }: PageProps) {
+  const { slug } = await params
+  const { meta, content } = await getProject(slug)
   
   return (
     <div className="min-h-screen p-24">
