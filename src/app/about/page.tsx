@@ -27,7 +27,7 @@ export default function AboutPage() {
   return (
     <div 
       ref={containerRef}
-      className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-black p-8 md:p-24 relative overflow-hidden"
+      className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-black p-4 sm:p-6 md:p-8 lg:p-24 relative overflow-hidden"
     >
       {/* 마우스 움직임에 반응하는 그라데이션 */}
       <div 
@@ -49,7 +49,7 @@ export default function AboutPage() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute -top-20 -left-20 w-40 h-40 bg-blue-500/30 rounded-full blur-3xl"
+          className="absolute -top-10 sm:-top-20 -left-10 sm:-left-20 w-20 h-20 sm:w-40 sm:h-40 bg-blue-500/30 rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -62,19 +62,19 @@ export default function AboutPage() {
             ease: "easeInOut",
             delay: 2
           }}
-          className="absolute -bottom-20 -right-20 w-40 h-40 bg-purple-500/30 rounded-full blur-3xl"
+          className="absolute -bottom-10 sm:-bottom-20 -right-10 sm:-right-20 w-20 h-20 sm:w-40 sm:h-40 bg-purple-500/30 rounded-full blur-3xl"
         />
         
         {/* 뒤로가기 버튼 */}
         <motion.div 
-          className="mb-12 relative z-10"
+          className="mb-6 sm:mb-8 md:mb-12 relative z-10"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           <Link
             href="/"
-            className="inline-flex items-center px-6 py-3 text-sm font-medium text-white bg-white/10 backdrop-blur-xl rounded-full border border-white/20 hover:bg-white/20 hover:shadow-[0_0_20px_rgba(167,139,250,0.5)] hover:scale-105 transition-all duration-300"
+            className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 text-sm font-medium text-white bg-white/10 backdrop-blur-xl rounded-full border border-white/20 hover:bg-white/20 hover:shadow-[0_0_20px_rgba(167,139,250,0.5)] hover:scale-105 transition-all duration-300"
           >
             <svg
               className="w-4 h-4 mr-2"
@@ -101,7 +101,7 @@ export default function AboutPage() {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div 
-            className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20"
+            className="bg-white/10 backdrop-blur-xl rounded-3xl p-4 sm:p-6 md:p-8 border border-white/20"
             whileHover={{
               boxShadow: "0 0 50px rgba(167,139,250,0.2)",
               transition: { duration: 0.3 }
@@ -112,6 +112,35 @@ export default function AboutPage() {
             </div>
           </motion.div>
         </motion.article>
+
+        {/* 하단 중앙 뒤로가기 버튼 */}
+        <motion.div 
+          className="mt-12 sm:mt-16 md:mt-20 flex justify-center relative z-10"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          <Link
+            href="/"
+            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 text-base font-medium text-white bg-white/10 backdrop-blur-xl rounded-full border border-white/20 hover:bg-white/20 hover:shadow-[0_0_30px_rgba(167,139,250,0.6)] hover:scale-110 transition-all duration-300"
+          >
+            <svg
+              className="w-5 h-5 mr-3"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
+            </svg>
+            메인으로 돌아가기
+          </Link>
+        </motion.div>
       </div>
     </div>
   )

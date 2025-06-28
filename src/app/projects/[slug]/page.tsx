@@ -64,9 +64,9 @@ export default async function ProjectPage({ params }: PageProps) {
   }) as React.ComponentType<ProjectComponentProps>
   
   return (
-    <div className="min-h-screen p-24">
+    <div className="min-h-screen p-4 sm:p-8 md:p-12 lg:p-24">
       {/* 뒤로가기 버튼 */}
-      <div className="mb-6">
+      <div className="mb-4 sm:mb-6">
         <Link
           href="/projects"
           className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
@@ -92,7 +92,7 @@ export default async function ProjectPage({ params }: PageProps) {
       <ProjectComponent meta={project.meta} />
       
       {/* 하단 뒤로가기 버튼 */}
-      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
+      <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
         <Link
           href="/projects"
           className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
