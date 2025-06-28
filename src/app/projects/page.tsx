@@ -7,6 +7,7 @@ interface Project {
   description: string
   slug: string
   order?: number
+  icon?: string
 }
 
 async function getProjects(): Promise<Project[]> {
@@ -21,23 +22,42 @@ async function getProjects(): Promise<Project[]> {
         
         try {
           // TSX 파일에서 메타데이터를 동적으로 import
-          const module = await import(`@/content/projects/${slug}`)
-          const meta = module.meta || {}
+          const projectModule = await import(`@/content/projects/${slug}`)
+          const meta = projectModule.meta || {}
+          
+          // slug에 따라 아이콘 경로 지정
+          let icon = ''
+          if (slug === '1') {
+            icon = '/stealthmode.jpeg'
+          } else if (['2', '3', '4'].includes(slug)) {
+            icon = '/gmarket.png'
+          } else if (slug === '5') {
+            icon = '/aidkr_logo.jpg'
+          }
           
           return {
             title: meta.title || slug.charAt(0).toUpperCase() + slug.slice(1),
             description: meta.description || '프로젝트 설명',
             slug: slug,
             order: meta.order || 999,
+            icon,
           }
         } catch (error) {
           // import 실패 시 기본값 사용
-          console.warn(`Failed to import meta from ${fileName}:`, error)
+          let icon = ''
+          if (slug === '1') {
+            icon = '/stealthmode.jpeg'
+          } else if (['2', '3', '4'].includes(slug)) {
+            icon = '/gmarket.png'
+          } else if (slug === '5') {
+            icon = '/aidkr_logo.jpg'
+          }
           return {
             title: slug.charAt(0).toUpperCase() + slug.slice(1),
             description: '프로젝트 설명',
             slug: slug,
             order: 999,
+            icon,
           }
         }
       })
@@ -51,23 +71,23 @@ export default async function ProjectsPage() {
   const projects = await getProjects()
   
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-y-auto">
       {/* 배경 장식 요소들 */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div 
-          className="absolute -top-40 -right-40 w-80 h-80 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          className="absolute -top-40 -right-40 w-96 h-96 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"
           style={{
             animation: 'blob 7s infinite'
           }}
         ></div>
         <div 
-          className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          className="absolute -bottom-40 -left-40 w-96 h-96 bg-yellow-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"
           style={{
             animation: 'blob 7s infinite 2s'
           }}
         ></div>
         <div 
-          className="absolute top-40 left-40 w-80 h-80 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          className="absolute top-40 left-40 w-96 h-96 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70"
           style={{
             animation: 'blob 7s infinite 4s'
           }}
@@ -129,10 +149,14 @@ export default async function ProjectsPage() {
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
                       <div className="flex items-center mb-4">
-                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300">
-                          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                          </svg>
+                        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 overflow-hidden">
+                          {project.icon && (
+                            <img
+                              src={project.icon}
+                              alt="프로젝트 아이콘"
+                              className="w-8 h-8 object-contain"
+                            />
+                          )}
                         </div>
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors duration-300">
                           {project.title}

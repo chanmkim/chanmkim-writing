@@ -24,8 +24,8 @@ async function getProject(slug: string) {
   
   try {
     // 메타데이터를 import
-    const module = await import(`@/content/projects/${slug}`)
-    const meta = module.meta || {}
+    const projectModule = await import(`@/content/projects/${slug}`)
+    const meta = projectModule.meta || {}
     
     return {
       slug,
@@ -90,6 +90,30 @@ export default async function ProjectPage({ params }: PageProps) {
       </div>
       
       <ProjectComponent meta={project.meta} />
+      
+      {/* 하단 뒤로가기 버튼 */}
+      <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
+        <Link
+          href="/projects"
+          className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100 transition-colors"
+        >
+          <svg
+            className="w-4 h-4 mr-2"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 19l-7-7m0 0l7-7m-7 7h18"
+            />
+          </svg>
+          프로젝트 목록으로 돌아가기
+        </Link>
+      </div>
     </div>
   )
 } 

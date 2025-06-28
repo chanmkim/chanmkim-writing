@@ -22,6 +22,11 @@ export default function Project1({ meta }: Project1Props) {
           </p>
         </header>
 
+        {/* 헤더 아래 이미지 */}
+        <div className="flex justify-center mb-12">
+          <img src="/1.png" alt="영어를 내려다 보다" className="rounded-xl shadow-lg max-w-full h-auto" />
+        </div>
+
         {/* 비즈니스 성과 섹션 */}
         <section className="mb-16">
           <div className="bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-950/20 dark:to-purple-950/20 rounded-2xl p-8 border border-pink-200/50 dark:border-pink-800/50">
