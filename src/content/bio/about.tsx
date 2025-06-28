@@ -89,6 +89,17 @@ export default function About() {
                 <p className="text-sm text-gray-500 dark:text-gray-400">
                   📅 2015.03 ~ 2021.08
                 </p>
+                
+                <div className="mt-4 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+                  <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                    📊 연구 프로젝트: 시대별 정서 분석
+                  </h4>
+                  <ul className="text-sm text-blue-800 dark:text-blue-200 space-y-1">
+                    <li>• 각 시대의 주요소설들에 대한 말뭉치 데이터를 수집</li>
+                    <li>• 전체 텍스트의 주요 키워드들을 분류하여 토픽모델링을 진행</li>
+                    <li>• 그 결과 각 시대별 주요 정서를 통계적으로 검증할 수 있었음</li>
+                  </ul>
+                </div>
               </div>
               <div className="text-right">
                 <span className="inline-block bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 text-sm font-medium px-3 py-1 rounded-full">
