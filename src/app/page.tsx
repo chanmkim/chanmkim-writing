@@ -232,21 +232,6 @@ export default function Home() {
               제 이력과 기술 스택을 확인해보세요.
             </p>
           </Link>
-
-          <Link
-            href="/read-list"
-            className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          >
-            <h2 className="mb-3 text-2xl font-semibold">
-              읽은 글{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              관심있게 읽은 아티클들을 모아놓았습니다.
-            </p>
-          </Link>
         </div>
       </div>
     </main>
