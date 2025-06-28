@@ -1,6 +1,6 @@
 'use client'
 
-import About, { meta } from '@/content/bio/about'
+import About from '@/content/bio/about'
 import Link from 'next/link'
 import { useEffect, useState, useRef } from 'react'
 import { motion } from 'framer-motion'
@@ -108,7 +108,7 @@ export default function AboutPage() {
             }}
           >
             <div className="mdx-content">
-              <About title={meta.title} description={meta.description} />
+              <About />
             </div>
           </motion.div>
         </motion.article>

@@ -1,11 +1,7 @@
 import React from 'react'
+import Link from 'next/link'
 
-interface AboutProps {
-  title: string
-  description: string
-}
-
-export default function About({ title, description }: AboutProps) {
+export default function About() {
   return (
     <div className="max-w-4xl mx-auto space-y-12">
       {/* About Me Section */}
@@ -15,7 +11,7 @@ export default function About({ title, description }: AboutProps) {
         </h2>
         
         <blockquote className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6 border-l-4 border-blue-500 pl-4 italic">
-          "Creator(Software) is eating the world"
+          &ldquo;Creator(Software) is eating the world&rdquo;
         </blockquote>
         
         <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
@@ -40,11 +36,11 @@ export default function About({ title, description }: AboutProps) {
           </p>
           
           <p>
-            결국 사람들은 '나를 재밌게 해주고, 부자되게 해주고, 자극적으로 만들어주는 것'들에 집중하기 때문입니다.
+            결국 사람들은 &lsquo;나를 재밌게 해주고, 부자되게 해주고, 자극적으로 만들어주는 것&rsquo;들에 집중하기 때문입니다.
           </p>
           
           <p>
-            그렇게 시간이 흘러 이 시기를 되돌아 보았을 때 '아, 그 때가 AI혁명이 아니라 컨텐츠 혁명의 시기였구나'라는 것을 모두가 알게 될 것입니다.
+            그렇게 시간이 흘러 이 시기를 되돌아 보았을 때 &lsquo;아, 그 때가 AI혁명이 아니라 컨텐츠 혁명의 시기였구나&rsquo;라는 것을 모두가 알게 될 것입니다.
           </p>
           
           <p>
@@ -70,7 +66,7 @@ export default function About({ title, description }: AboutProps) {
           
           <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
             <p className="text-blue-800 dark:text-blue-200 font-medium">
-              💡 자세한 프로젝트 내역은 <a href="/projects" className="underline hover:text-blue-600 dark:hover:text-blue-300">프로젝트 페이지</a>에서 확인하실 수 있습니다!
+              💡 자세한 프로젝트 내역은 <Link href="/projects" className="underline hover:text-blue-600 dark:hover:text-blue-300">프로젝트 페이지</Link>에서 확인하실 수 있습니다!
             </p>
           </div>
         </div>
