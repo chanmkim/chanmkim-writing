@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const meta = {
   title: "G마켓 - Product Manager",
@@ -32,9 +33,11 @@ const Project4 = ({ meta: propMeta }: Project4Props) => {
 
         {/* 프로젝트 이미지 */}
         <div className="mb-16">
-          <img
+          <Image
             src="/4.webp"
-            alt="G마켓 저품질 상품 관리 및 사업자 ID 제한 프로젝트"
+            alt="G마켓 프로젝트"
+            width={1200}
+            height={600}
             className="w-full rounded-xl shadow-lg"
           />
         </div>

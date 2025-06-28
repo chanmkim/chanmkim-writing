@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 const meta = {
   title: "G마켓 - Product Manager",
@@ -32,9 +33,11 @@ const Project2 = ({ meta: propMeta }: Project2Props) => {
 
         {/* 프로젝트 이미지 */}
         <div className="mb-16">
-          <img
+          <Image
             src="/2.webp"
             alt="G마켓 CS 응답률 개선 프로젝트"
+            width={1200}
+            height={600}
             className="w-full rounded-xl shadow-lg"
           />
         </div>
@@ -87,7 +90,7 @@ const Project2 = ({ meta: propMeta }: Project2Props) => {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-green-500 mt-1">💭</span>
-                    <span>이를 위한 수단으로써 홈모듈과 CS처리 페이지에 공통 영역으로 '일자별로 접수된 CS건들을 확인'할 수 있는 영역을 배치하고자 하였음</span>
+                    <span>이를 위한 수단으로써 홈모듈과 CS처리 페이지에 공통 영역으로 &apos;일자별로 접수된 CS건들을 확인&apos;할 수 있는 영역을 배치하고자 하였음</span>
                   </li>
                 </ul>
               </div>

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import fs from 'fs'
 import path from 'path'
+import Image from 'next/image'
 
 interface Project {
   title: string
@@ -42,7 +43,7 @@ async function getProjects(): Promise<Project[]> {
             order: meta.order || 999,
             icon,
           }
-        } catch (error) {
+        } catch {
           // import 실패 시 기본값 사용
           let icon = ''
           if (slug === '1') {
@@ -151,10 +152,12 @@ export default async function ProjectsPage() {
                       <div className="flex items-center mb-4">
                         <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform duration-300 overflow-hidden">
                           {project.icon && (
-                            <img
+                            <Image
                               src={project.icon}
                               alt="프로젝트 아이콘"
-                              className="w-8 h-8 object-contain"
+                              width={32}
+                              height={32}
+                              className="object-contain"
                             />
                           )}
                         </div>

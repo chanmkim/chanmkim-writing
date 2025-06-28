@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 interface Project1Props {
   meta?: {
@@ -23,8 +24,14 @@ export default function Project1({ meta }: Project1Props) {
         </header>
 
         {/* 헤더 아래 이미지 */}
-        <div className="flex justify-center mb-12">
-          <img src="/1.png" alt="영어를 내려다 보다" className="rounded-xl shadow-lg max-w-full h-auto" />
+        <div className="mb-16">
+          <Image
+            src="/1.png"
+            alt="Stealth Mode 프로젝트"
+            width={1200}
+            height={600}
+            className="w-full rounded-xl shadow-lg"
+          />
         </div>
 
         {/* 비즈니스 성과 섹션 */}
