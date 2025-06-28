@@ -165,9 +165,8 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur opacity-75 animate-pulse"></div>
                 <div className="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white px-8 py-4 rounded-full shadow-2xl">
                   <div className="flex items-center gap-3">
-                    <svg width="32" height="32" viewBox="0 0 32 32" className="animate-spin" style={{animationDuration: '3s'}}>
-                      <circle cx="16" cy="16" r="12" stroke="currentColor" strokeWidth="2" fill="none" opacity="0.3"/>
-                      <path d="M16 4 A12 12 0 0 1 28 16" stroke="currentColor" strokeWidth="2" fill="none"/>
+                    <svg width="32" height="32" viewBox="0 0 32 32" className="animate-pulse">
+                      <path d="M16 2 L19.09 10.26 L28 11 L19.09 11.74 L16 20 L12.91 11.74 L4 11 L12.91 10.26 L16 2Z" fill="currentColor"/>
                     </svg>
                     <span className="text-lg font-bold">스토리텔링</span>
                     <svg width="32" height="32" viewBox="0 0 32 32" className="animate-bounce">
