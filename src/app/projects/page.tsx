@@ -127,7 +127,7 @@ export default async function ProjectsPage() {
               프로젝트
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto px-4">
-              다양한 기술과 창의성을 담은 프로젝트들을 확인해보세요
+              프로덕트의 성장/실행/운영에 대한 경험을 공유합니다
             </p>
           </div>
           

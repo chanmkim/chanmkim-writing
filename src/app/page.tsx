@@ -244,7 +244,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              크리에이터 이코노미와 개발에 대한 생각들을 공유합니다.
+              웹3, 크리에이터 이코노미에 대한 생각들을 공유합니다.
             </p>
           </Link>
         </div>
