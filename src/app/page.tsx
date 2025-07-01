@@ -232,6 +232,21 @@ export default function Home() {
               제 이력과 기술 스택을 확인해보세요.
             </p>
           </Link>
+
+          <Link
+            href="/writing-list"
+            className="group rounded-lg border border-transparent px-4 sm:px-5 py-3 sm:py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          >
+            <h2 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-semibold">
+              글 목록{" "}
+              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                -&gt;
+              </span>
+            </h2>
+            <p className="m-0 max-w-[30ch] text-sm opacity-50">
+              크리에이터 이코노미와 개발에 대한 생각들을 공유합니다.
+            </p>
+          </Link>
         </div>
       </div>
     </main>
