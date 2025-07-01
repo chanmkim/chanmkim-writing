@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getWritingById, getAllWritings, getWritingComponent } from '@/content/writings'
+import { getWritingById, getAllWritings } from '@/content/writings'
 import { Writing1 } from '@/content/writings/1'
 
 interface PageProps {
