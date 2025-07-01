@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">안녕하세요, 김찬민입니다 👋</h1>
         <p className="text-lg sm:text-xl mb-4 sm:mb-6 md:mb-8">
           <TypingEffect 
-            text="크리에이터 이코노미에 관심이 많은 Builder, PM, Creator입니다" 
+            text="크리에이터 이코노미에 관심이 많은 Builder, Creator, PM입니다" 
             speed={80}
             className="text-lg sm:text-xl"
             repeatDelay={3000}
@@ -67,7 +67,7 @@ export default function Home() {
                   
                   <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-emerald-800 dark:text-emerald-200">Builder</h3>
                   <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                    기술적 전문성으로<br/>아이디어를 현실로<br/>구현하는 실행력
+                    기술적 고찰로<br/>아이디어를 현실로<br/>구현하는 실행력
                   </p>
                   
                   <div className="mt-3 sm:mt-4 space-y-2">
@@ -77,46 +77,6 @@ export default function Home() {
                     </div>
                     <div className="w-full bg-emerald-200 dark:bg-emerald-800 rounded-full h-2">
                       <div className="bg-gradient-to-r from-emerald-400 to-teal-500 h-2 rounded-full w-[92%] animate-pulse" style={{animationDelay: '0.3s'}}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* PM 카드 */}
-              <div className="group cursor-pointer">
-                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-200 dark:border-blue-700">
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-800 dark:to-indigo-800 rounded-full opacity-20"></div>
-                  
-                  <div className="relative mb-4 sm:mb-6">
-                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
-                      <circle cx="32" cy="32" r="28" fill="url(#pmGradient)" className="animate-pulse"/>
-                      <defs>
-                        <linearGradient id="pmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#3b82f6"/>
-                          <stop offset="100%" stopColor="#1d4ed8"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M20 28 L32 20 L44 28 L44 40 L32 48 L20 40 Z" fill="white" opacity="0.2"/>
-                      <circle cx="26" cy="30" r="2" fill="white"/>
-                      <circle cx="32" cy="26" r="2" fill="white"/>
-                      <circle cx="38" cy="30" r="2" fill="white"/>
-                      <path d="M26 30 L32 26 L38 30" stroke="white" strokeWidth="1.5"/>
-                      <rect x="28" y="36" width="8" height="3" fill="white" opacity="0.8"/>
-                    </svg>
-                  </div>
-                  
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-blue-800 dark:text-blue-200">PM</h3>
-                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                    전략적 사고와<br/>데이터 기반으로<br/>제품 방향성 제시
-                  </p>
-                  
-                  <div className="mt-3 sm:mt-4 space-y-2">
-                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-                      <span>전략성</span>
-                      <span>90%</span>
-                    </div>
-                    <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse" style={{animationDelay: '0.6s'}}></div>
                     </div>
                   </div>
                 </div>
@@ -157,6 +117,46 @@ export default function Home() {
                     </div>
                     <div className="w-full bg-pink-200 dark:bg-pink-800 rounded-full h-2">
                       <div className="bg-gradient-to-r from-pink-400 to-rose-500 h-2 rounded-full w-[95%] animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* PM 카드 */}
+              <div className="group cursor-pointer">
+                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-200 dark:border-blue-700">
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-800 dark:to-indigo-800 rounded-full opacity-20"></div>
+                  
+                  <div className="relative mb-4 sm:mb-6">
+                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
+                      <circle cx="32" cy="32" r="28" fill="url(#pmGradient)" className="animate-pulse"/>
+                      <defs>
+                        <linearGradient id="pmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#3b82f6"/>
+                          <stop offset="100%" stopColor="#1d4ed8"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M20 28 L32 20 L44 28 L44 40 L32 48 L20 40 Z" fill="white" opacity="0.2"/>
+                      <circle cx="26" cy="30" r="2" fill="white"/>
+                      <circle cx="32" cy="26" r="2" fill="white"/>
+                      <circle cx="38" cy="30" r="2" fill="white"/>
+                      <path d="M26 30 L32 26 L38 30" stroke="white" strokeWidth="1.5"/>
+                      <rect x="28" y="36" width="8" height="3" fill="white" opacity="0.8"/>
+                    </svg>
+                  </div>
+                  
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-blue-800 dark:text-blue-200">PM</h3>
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
+                    전략적 사고와<br/>데이터 기반으로<br/>제품 방향성 제시
+                  </p>
+                  
+                  <div className="mt-3 sm:mt-4 space-y-2">
+                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
+                      <span>전략성</span>
+                      <span>90%</span>
+                    </div>
+                    <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse" style={{animationDelay: '0.6s'}}></div>
                     </div>
                   </div>
                 </div>
