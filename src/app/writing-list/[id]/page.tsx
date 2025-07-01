@@ -4,9 +4,9 @@ import { notFound } from 'next/navigation'
 import { getWritingById, getAllWritings } from '@/content/writings'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
