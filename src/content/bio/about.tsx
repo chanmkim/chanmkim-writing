@@ -57,7 +57,7 @@ export default function About() {
         
         <div className="space-y-4 text-gray-700 dark:text-gray-300">
           <p className="text-lg leading-relaxed">
-            크리에이터 이코노미에 관심을 가지고 있는 Builder, PM입니다.
+            크리에이터 이코노미에 관심을 가지고 있는 Builder입니다.
           </p>
           
           <p className="leading-relaxed">
