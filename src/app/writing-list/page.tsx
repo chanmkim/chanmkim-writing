@@ -51,7 +51,7 @@ export default function WritingListPage() {
             글 목록 📝
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6">
-            아래 글들은 더미데이터입니다 : )
+            웹3, 크리에이터 이코노미, 기술과 인터페이스에 대해서 이야기합니다
           </p>
 
           {/* 검색 및 필터 섹션 */}

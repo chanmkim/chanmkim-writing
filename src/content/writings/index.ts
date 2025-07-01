@@ -1,13 +1,9 @@
 import { Writing } from './types'
-import { writing1 } from './1'
-import { writing2 } from './2'
-import { writing3 } from './3'
+import { writing1Meta } from './1'
 
-// 모든 글 데이터를 배열로 export
+// 모든 글 메타데이터를 배열로 export
 export const writings: Writing[] = [
-  writing1,
-  writing2,
-  writing3
+  writing1Meta
 ]
 
 // 특정 ID로 글을 찾는 함수
@@ -55,4 +51,14 @@ export function searchWritings(searchTerm: string, category?: string): Writing[]
   }
   
   return filteredWritings
+}
+
+// 글 컴포넌트를 가져오는 함수
+export function getWritingComponent(id: string) {
+  switch (id) {
+    case 'why_web3_250701':
+      return import('./1').then(module => module.Writing1)
+    default:
+      return null
+  }
 } 
