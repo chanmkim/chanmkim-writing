@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import ImageModal from '@/components/image-modal'
 
 const meta = {
   title: "한국축산데이터 - UI & Backend Engineer",
@@ -33,7 +34,7 @@ const Project5 = ({ meta: propMeta }: Project5Props) => {
 
         {/* 프로젝트 이미지 */}
         <div className="mb-16">
-          <Image
+          <ImageModal
             src="/5.jpg"
             alt="AIDKR 프로젝트"
             width={1200}

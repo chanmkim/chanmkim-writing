@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import ImageModal from '@/components/image-modal'
 
 interface Project1Props {
   meta?: {
@@ -25,7 +26,7 @@ export default function Project1({ meta }: Project1Props) {
 
         {/* 헤더 아래 이미지 */}
         <div className="mb-16">
-          <Image
+          <ImageModal
             src="/1.png"
             alt="Stealth Mode 프로젝트"
             width={1200}

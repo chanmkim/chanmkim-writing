@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import ImageModal from '@/components/image-modal'
 
 const meta = {
   title: "G마켓 - Product Manager",
@@ -33,7 +34,7 @@ const Project2 = ({ meta: propMeta }: Project2Props) => {
 
         {/* 프로젝트 이미지 */}
         <div className="mb-16">
-          <Image
+          <ImageModal
             src="/2.webp"
             alt="G마켓 CS 응답률 개선 프로젝트"
             width={1200}
