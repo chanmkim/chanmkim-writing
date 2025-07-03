@@ -65,7 +65,7 @@ export const Writing1: React.FC = () => {
               <div className="timeline-item">
                 <div className="timeline-marker"></div>
                 <div className="timeline-content">
-                  <p>블렌드로 헬리콥터를 모델링하는데 일주일이 걸렸습니다. 그러나 이 역시 장벽이 허물어졌습니다.</p>
+                  <p>블렌더 3D로 헬리콥터를 모델링하는데 일주일이 걸렸습니다. 그러나 이제는 MCP프로토콜로 30분만에 만듭니다.</p>
                 </div>
               </div>
               <div className="timeline-item">
