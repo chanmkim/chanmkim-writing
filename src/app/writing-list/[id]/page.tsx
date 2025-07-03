@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { getWritingById, getAllWritings } from '@/content/writings'
 import { Writing1 } from '@/content/writings/1'
+import { Writing2 } from '@/content/writings/2'
 
 interface PageProps {
   params: Promise<{
@@ -39,6 +40,8 @@ export default async function WritingPage({ params }: PageProps) {
     switch (id) {
       case 'why_web3_250701':
         return <Writing1 />
+      case 'auth_interface_250703':
+        return <Writing2 />
       default:
         return <div>글을 찾을 수 없습니다.</div>
     }

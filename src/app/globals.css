@@ -139,6 +139,26 @@ html {
   color: #d1d5db;
 }
 
+/* 이미지 컨테이너 스타일 */
+.image-container {
+  margin: 2rem 0;
+  text-align: center;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.content-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.content-image:hover {
+  transform: scale(1.02);
+}
+
 /* 히어로 섹션 */
 .hero-section {
   position: relative;

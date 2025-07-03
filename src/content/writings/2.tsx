@@ -1,0 +1,262 @@
+import React from 'react'
+import { Writing } from './types'
+import Image from 'next/image'
+
+export const Writing2: React.FC = () => {
+  return (
+    <div className="writing-content">
+      <div className="hero-section">
+        <div className="hero-background">
+          <div className="floating-elements">
+            <div className="floating-circle circle-1"></div>
+            <div className="floating-circle circle-2"></div>
+            <div className="floating-circle circle-3"></div>
+          </div>
+        </div>
+        <div className="hero-content">
+          <div className="category-badge">
+            <span className="badge-icon">🔐</span>
+            <span>Product</span>
+          </div>
+          <h1 className="main-title">회원가입이 중요한 이유</h1>
+          <p className="main-description">Interface Layer로서 Authorization : 비즈니스, 기술 그리고 웹3</p>
+          <div className="meta-info">
+            <div className="meta-item">
+              <span className="meta-icon">👤</span>
+              <span>김찬민</span>
+            </div>
+            <div className="meta-item">
+              <span className="meta-icon">📅</span>
+              <span>2025-07-03</span>
+            </div>
+            <div className="meta-item">
+              <span className="meta-icon">⏱️</span>
+              <span>6분 읽기</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="content-sections">
+        <section className="content-section">
+          <div className="section-header">
+            <h2 className="section-title">인터페이스로서 Authorization</h2>
+            <div className="section-decoration"></div>
+          </div>
+          <div className="section-content">
+            <p>굉장히 복잡하면서도 짜증이 나는 영역입니다. 코딩을 처음 배울 때 SSO라는게 너무 어려워서 3주 동안 붙잡다가 포기한 기억이 있습니다.</p>
+            <p>구글 oAuth, 카카오톡 로그인. 기술적으로는 짜증나지만 비즈니스의 측면에서의 영향력은 간과할 수 없다고 생각합니다. 바로 이 영역이 기술을 Commoditization(상용화)하는 구간이기 때문입니다.</p>
+            <p>그리고 프로덕트의 설계입장에서도 사실은 로그인/회원가입이 첫시작이 됩니다. 오늘은 Interface Layer로서의 로그인/회원가입에 대해 이야기해보겠습니다.</p>
+            <div className="reference-box">
+              <p><em>참고자료 : <a href="https://x.com/scottbelsky/status/1796531826262950212" target="_blank" rel="noopener noreferrer">https://x.com/scottbelsky/status/1796531826262950212</a></em></p>
+            </div>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <h2 className="section-title">퍼널 관점에서의 Authorization</h2>
+            <div className="section-decoration"></div>
+          </div>
+          <div className="section-content">
+            <p>개인프로젝트를 진행하면서 가장 깊게 생각했던 부분은 어떻게 사람들을 모으고 설득할까였습니다.</p>
+            <p>이런 부분이 조직 내에서 프로젝트를 하는 것과 조직 밖에서 새롭게 프로젝트를 하는 것의 차이점이라고 생각합니다. 사실 이런 부분이 우리가 무언가를 시도하는 것을 어렵게 만들곤 합니다.</p>
+            <p>조직 내에서 프로젝트를 진행할 때는 모든 것이 단순합니다. 이미 모든 사람들의 연락처를 알고 있고, 이메일을 보내고, 미팅을 진행하면 됩니다.</p>
+            <p>그런데 조직 내에서는 가장 쉬웠던 부분이 조직 밖에서는 가장 어려운 부분이 됩니다. 도대체 내 유저, 고객, 클라이언트, 파트너가 어디에 있는지 감조차 오지 않습니다.</p>
+            <p>이들에게 어떻게 컨택하고, 처음으로 건낼 마디는 무엇이 되어야 하며, 그래서 어떻게 비춰질 것인가. 그리고 실제로 그들이 거래에 응할 것인가에 대한 생각들이 필요합니다.</p>
+            <p>이렇게 막막함이 들 때 유용한 접근방식이 있습니다. 바로 "측정가능한 세일즈레터"입니다.</p>
+            
+            <div className="image-container">
+              <Image 
+                src="/250703/maxresdefault.jpg"
+                alt="Sales Letter"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>엔지니어링적인 완성도도 중요하지만 정말로 중요했던 것은 세일즈였습니다. 오죽했으면 피터틸이 "양복을 입은 안경잡이들"이라는 말을 했을 까요?</p>
+            <p>누군가는 세일즈에 대해 광고쟁이들이라 비하합니다. 그러나 사실은 누군가를 설득할 수 있을 때 비로소 '일'이라는 것을 시작할 수 있습니다. 누군가 내 제안에 응해주어야만이 비로소 '일'을 시작할 수 있기 때문입니다.</p>
+            <p>그리고 이러한 것을 처음으로 체계화시킨 것이 바로 클로드 홉킨스라는 인물입니다.</p>
+            <p>현대에 이르러서는 댄 케네디, 오길비, 러셀 브런슨 등의 직접반응마케터들이 등장했지만 하고자 하는 메시지는 동일합니다.</p>
+            <p>"측정할 수 없다면 개선할 수 없다는 것"입니다. 조금은 공허한 슬로건처럼 들리기 때문에 직접 제 이야기를 해보겠습니다.</p>
+            
+            <div className="image-container">
+              <Image 
+                src="/250703/challege_mail.PNG"
+                alt="Challenge Mail"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>기획의 관점에서 생각할 것은 단순했습니다. 내가 말을 걸어야할 사람은 누구이고, 그들은 어디에 있으며, 무슨 말을 할 것인가... 입니다.</p>
+            <p>유튜브, 웨비나, 페이드광고, 콜드메일. 다양한 경로가 있겠지만 그보다 중요한 것은 "측정가능한가"입니다. 측정할 수 없다면 개선할 수가 없기 때문입니다.</p>
+            <p>재미있는 점은 똑같은 메시지여도 연령대에 따라 반응율이 달랐고, 또 같은 연령대라고 하더라도 무엇에 관심있는지에 따라 반응정도가 달랐습니다.</p>
+            <p>처음에는 도대체 어디서부터 시작해야 할지 감조차 오지 않았지만, 이렇게 한명씩 말을 걸어보고 동시에 그것을 측정하면서 톤앤 매너를 잡아갔습니다.</p>
+            <p>그런데 이렇게 실험을 반복하기 위해서는 한가지 설계가 필요합니다. 바로 Authorization입니다.</p>
+            
+            <div className="image-container">
+              <Image 
+                src="/250703/유튜브.PNG"
+                alt="YouTube Analytics"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>네 맞아요. 유튜브 정말 좋은 마케팅 채널입니다. 그런데 보여지는 것과 다르게 측정할 수가 없습니다.</p>
+            <p>측정이 되는 것 같지만 어떤 유저(ID)가 어떻게 반응하는지를 알 수가 없습니다. 퍼널의 측면에서 괜찮아 보이지만 사실 그렇지가 않다는 것입니다.</p>
+            
+            <div className="image-container">
+              <Image 
+                src="/250703/supaauth.png"
+                alt="Supabase Auth"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>그래서 Authorization이 중요합니다. 결국 유튜브라는 채널은 우리가 직접적으로 Talk to Users를 할 수 있는 경로가 아닙니다. 그런 것처럼 보여도 결코 그렇지 않습니다.</p>
+            <p>그런데 Authorization은 그렇지 않습니다. 우리가 그 사람의 이메일과 연락처를 안다면 이메일을 보낼 때 그리고 사이트에 들어왔을 때 유저별 이력을 모두 알 수가 있습니다.</p>
+            <p>이것이 퍼널 관점에서 Authorization이 중요한 이유입니다.</p>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <h2 className="section-title">미들웨어 관점에서 Authorization</h2>
+            <div className="section-decoration"></div>
+          </div>
+          <div className="section-content">
+            <p>길고 긴 이야기였지만 결국 리드를 수집하라, 이메일 리스트를 구축해라, Qualified Lead가 중요하다... 라는 뻔한 말이었습니다.</p>
+            <p>그런데 그 맥락을 이야기해보는 것이 중요했습니다. 재미있는 사실은 Authorization이 마케팅과 디자인적인 측면에서만 중요한 것이 아니라는 것입니다.</p>
+            <p>엔지니어링적인 측면에서도 이것이 중요합니다.</p>
+            <p>저같은 사람에게 프로덕트를 처음부터 만드는 것은 꽤나 막막한 과정이었습니다.</p>
+            <p>우주의 시작이 있다는 것은 아나 그것을 실제로 본 사람은 없듯이, 이미 만들어진 프로덕트를 개선하는 일만 해왔지 첫 삽을 어떻게 떠야 하는지는 해본 적이 없기 때문입니다.</p>
+
+            <div className="image-container">
+              <Image 
+                src="/250703/unnamed (1).png"
+                alt="Pavel Durov"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>그럴 때 영감을 주었던 것이 파벨 두로프였습니다. 지금은 텔레그램의 창업자로 유명하지만 초기에는 VK라는 앱을 성공시켰습니다. 그 당시 초기 타입은 파벨 두로프 혼자서 만들었습니다.</p>
+            <p>그러나 처음부터 모든 것이 수월한 것은 아니었습니다. 저처럼 프로그래밍은 할 줄 알았지만 언어학을 전공한 Non-professional Programmer 였기 때문입니다.</p>
+            <p>머릿 속에 구상은 있었으나 도대체 어디서부터 시작해야 할지 막막했던 그 순간, 개발 경험이 풍부한 그의 형이 그에게 한가지 조언을 건냈습니다.</p>
+            <p>바로 "인증기능부터 만들어라"라는 것이었습니다. 어차피 모든 기능은 회원을 대상으로 제공되기 때문에 로그인/회원가입 페이지만 구현한다면 그로부터 모든 기능을 구현할 수 있다는 것입니다.</p>
+
+            <div className="image-container">
+              <Image 
+                src="/250703/미들웨어.PNG"
+                alt="Middleware Architecture"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>저는 이 말에 100% 동의합니다.</p>
+            <p>모든 도메인, API, DB까지 공통적으로 Authorization에 기반을 두고 있기 때문입니다. 그렇기에 Middleware를 설계하는 것이 눈에 드러나진 않지만 사실상 모든 기능을 맵핑하는 핵심이었습니다.</p>
+            <p>도메인을 단순하게 본다면 가입 전 랜딩페이지, 가입 후 무료페이지, 유료회원을 위한 기능들로 나뉠 겁니다. 한가지 더 간다면 추천인 페이지도 있을 수 있겠죠.</p>
+            <p>결국 도메인이라고 했지만 모든 지면구성의 근간은 Authorization이라는 것입니다. 단순히 UX를 넘어 API 역시 마찬가지입니다.</p>
+            <p>RESTful API의 기본 전제는 호출하는 Client에 어떤 Header가 있는 것일 겁니다. 검증된 Header를 쓰고, 해당 API의 URL로, 적절한 Body값을 보내는 것. 이것이 기본 스펙이라고 할 수 있습니다.</p>
+            <p>그리고 Client Header에는 기본적으로 Session, Cookies 값들이 들어갑니다. API 통신의 전제조건 자체가 Authorization을 필요로 하고 있습니다.</p>
+            <p>마지막으로 DB 영역은 말할 것도 없습니다. 특히 Supabase와 같은 Headless DB를 이용하는 경우, RLS 정책은 필수적이었습니다. 테이블의 CRUD에 대해서 모두 권한별로 정의를 해주어야 했습니다.</p>
+            <p>Authorization이라는 것이 굉장히 지루하고 복잡하지만 마케팅과 기술적인 측면에서 모두 핵심적이었습니다.</p>
+
+            <div className="image-container">
+              <Image 
+                src="/250703/1_YDieZh8TwNc1gPV8ncL3_w.webp"
+                alt="Interface Layer"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>생각해보면 내가 상대하는 사람이 누구고, 그 사람에게 무슨 말을 할지 아는 것이 중요하기에 당연한 것 아닐까요? 그런 당연한 사실을 해보고 나서야 알게 되는 것 같습니다</p>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <h2 className="section-title">웹3 관점의 Authorization</h2>
+            <div className="section-decoration"></div>
+          </div>
+          <div className="section-content">
+            <p>지금까지는 플랫폼이 토큰을 Owning하는 웹2.0스러운 이야기만 해보았습니다. 이번에는 웹3.0의 측면에서 Authorization에 대해서 이야기를 하고 마무리하도록 하겠습니다.</p>
+            <p>상태관리머신, Ledger, 읽고/쓰고/소유하다... 각기 다른 용어처럼 들리지만 저에게는 모두 같은 흐름으로 느껴집니다.그리고 이 모든 이야기는 Infra Layer측면의 이야기인 것 같습니다.</p>
+            <p>그래서 Interface Layer측면에서 Web3를 바라보겠습니다. 제가 생각했을 때 핵심은 Wallet입니다. 지갑이라고도 적을 수 있겠지만 우리가 생각하는 지갑과 다르다고 느껴져서 Wallet이라고 적겠습니다.</p>
+
+            <div className="image-container">
+              <Image 
+                src="/250703/flamingo.PNG"
+                alt="Flamingo DAO"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>웹2.0에서 우리가 어떤 커뮤니티에 가입하다라는 것은 기본적으로 어떤 동선으로 이루어질까요?</p>
+            <p>회원가입창이 있고, 거기에 연락처와 이름을 기입하고, 로그인을 진행합니다. 그리고 사람들의 신원은 uuid 값으로 관리되며 User DB는 플랫폼에 종속되는 형태입니다.</p>
+            <p>그런데 웹 3.0에서는 구글로그인, 카카오톡 로그인을 다른 형태로 대체합니다. 대표적으로 제가 처음 흥미를 가졌던 Flamingo DAO의 사례를 들고 와봤습니다.</p>
+            <p>플라밍고 DAO에 참여하기 위해서는 Wallet을 연결할 필요가 있습니다. 그리고 그 Wallet에 커뮤니티에 대한 참여권(NFT)을 가지고 있을 때 비로소 DAO에서 활동할 수 있습니다.</p>
+            <p>DAO에 합류하거나, 거래소에 가입하거나, 초기 프로젝트에 Airdrop을 받거나 다 마찬가지입니다. early-stage 크립토펀드의 경우, 초기 물량을 따로 빼서 가지고 있는 것도 Ownership을 가지는 방안일 수 있겠네요.</p>
+            <p>아, 거래소는 조금 다를 수 있습니다. 지금의 거래소는 인터넷머니와 시중은행을 연결해주는 포탈이기에 2.0 스타일로 신원을 인증하면서 3.0 스타일로 거래소별 지갑을 만들어 줍니다.</p>
+            <p>그런데 이 역시도 탈중앙화 거래소로 흐름이 넘어오고 있으며 솔라나 등장 이후 그 흐름이 가속화되고 있다고 봅니다. 정책적으로 스테이블코인이 도입되는 것도 중간에 거래소 없이 크립토를 곧바로 원화로 바꿀 수 있다... 라는 의미가 될 수도 있어 보입니다.</p>
+
+            <div className="image-container">
+              <Image 
+                src="/250703/ramper.PNG"
+                alt="Ramper SDK"
+                width={800}
+                height={450}
+                className="content-image"
+              />
+            </div>
+
+            <p>그래서 웹3.0에서는 말이 지갑이지, 사실은 기존의 Authorization의 역할을 하기에 조금 특별한 의미에서 Wallet이라는 용어를 저는 쓰고 있습니다.</p>
+            <p>마케팅, 기술의 측면에서 Authorization은 웹2.0, 웹3.0 상관없이 모두 중요합니다. 그렇기에 Ramper라는 Wallet SDK 스타트업이 해시드에 투자를 받고 1년만에 매각이 이뤄진 것이라 생각합니다.</p>
+            <p>당연히 구글 oAuth, 카카오톡 로그인이 존재했듯 웹3.0 패러다임에서도 동일한 역할을 하는 게이트웨이는 존재할 것이라 생각합니다.</p>
+            <p>지금은 네이버 포인트라고 불리는 네이버 페이가 그것이고, 카카오톡 선물하기와 연결된 카카오 페이가 이제는 Wallet이 되겠네요.</p>
+            <p>DAO, DeFi, DEX, DApp을 가더라도 카카오톡 로그인처럼 카카오 Wallet이 자리잡고 있을수도 있겠습니다.</p>
+          </div>
+        </section>
+
+        <section className="content-section">
+          <div className="section-header">
+            <h2 className="section-title">Wrap-up</h2>
+            <div className="section-decoration"></div>
+          </div>
+          <div className="section-content">
+            <p>기술과 인터페이스의 측면에서 Authorization에 대한 생각을 정리해보았습니다.</p>
+            <p>웹 2.0, 웹 3.0 관계없이 모두 통용되는 흐름이라고 느껴집니다.</p>
+            <p>긴 글 읽어주셔서 감사합니다.</p>
+          </div>
+        </section>
+      </div>
+    </div>
+  )
+}
+
+// 메타데이터를 위한 export
+export const writing2Meta: Writing = {
+  id: 'auth_interface_250703',
+  title: '회원가입이 중요한 이유',
+  description: 'Interface Layer로서 Authorization : 비즈니스, 기술 그리고 웹3',
+  date: '2025-07-03',
+  category: 'Product',
+  readTime: '6분',
+  author: '김찬민',
+  content: '굉장히 복잡하면서도 짜증이 나는 영역입니다. 코딩을 처음 배울 때 SSO라는게 너무 어려워서 3주 동안 붙잡다가 포기한 기억이 있습니다. 구글 oAuth, 카카오톡 로그인. 기술적으로는 짜증나지만 비즈니스의 측면에서의 영향력은 간과할 수 없다고 생각합니다. 바로 이 영역이 기술을 Commoditization(상용화)하는 구간이기 때문입니다.'
+}
