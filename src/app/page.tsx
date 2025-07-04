@@ -7,8 +7,18 @@ import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [matrixChars, setMatrixChars] = useState<string[]>([])
+  const [windowHeight, setWindowHeight] = useState(1000) // 기본값 설정
 
   useEffect(() => {
+    // window 객체가 있을 때만 높이 설정
+    setWindowHeight(window.innerHeight)
+
+    // resize 이벤트 리스너 추가
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight)
+    }
+    window.addEventListener('resize', handleResize)
+
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?'
     const matrixCharsArray = Array.from({ length: 100 }, () => 
       chars[Math.floor(Math.random() * chars.length)]
@@ -21,7 +31,11 @@ export default function Home() {
       )
     }, 100)
 
-    return () => clearInterval(interval)
+    // cleanup
+    return () => {
+      clearInterval(interval)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   return (
@@ -40,7 +54,7 @@ export default function Home() {
                 animationDelay: `${Math.random() * 2}s`
               }}
               animate={{
-                y: [0, window.innerHeight],
+                y: [0, windowHeight],
                 opacity: [0.2, 0.8, 0.2]
               }}
               transition={{
@@ -89,7 +103,7 @@ export default function Home() {
                 fontSize: `${12 + Math.random() * 8}px`
               }}
               animate={{
-                y: [0, window.innerHeight],
+                y: [0, windowHeight],
                 opacity: [0, 1, 0]
               }}
               transition={{
