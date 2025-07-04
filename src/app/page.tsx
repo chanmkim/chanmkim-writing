@@ -1,12 +1,123 @@
+'use client'
+
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import TypingEffect from '@/components/typing-effect'
+import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [matrixChars, setMatrixChars] = useState<string[]>([])
+
+  useEffect(() => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+-=[]{}|;:,.<>?'
+    const matrixCharsArray = Array.from({ length: 100 }, () => 
+      chars[Math.floor(Math.random() * chars.length)]
+    )
+    setMatrixChars(matrixCharsArray)
+
+    const interval = setInterval(() => {
+      setMatrixChars(prev => 
+        prev.map(() => chars[Math.floor(Math.random() * chars.length)])
+      )
+    }, 100)
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
-    <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 md:p-12 lg:p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">안녕하세요, 김찬민입니다 👋</h1>
-        <p className="text-lg sm:text-xl mb-4 sm:mb-6 md:mb-8">
+    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden">
+      {/* 매트릭스 배경 */}
+      <div className="absolute inset-0 -z-10 bg-black">
+        {/* 매트릭스 문자들 */}
+        <div className="absolute inset-0 overflow-hidden">
+          {matrixChars.map((char, index) => (
+            <motion.div
+              key={index}
+              className="absolute text-green-400 text-xs font-mono opacity-20"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 2}s`
+              }}
+              animate={{
+                y: [0, window.innerHeight],
+                opacity: [0.2, 0.8, 0.2]
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            >
+              {char}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* 매트릭스 그리드 효과 */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-900/10 to-green-900/20" />
+        
+        {/* 추가적인 매트릭스 레이어 */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 20 }, (_, i) => (
+            <motion.div
+              key={`column-${i}`}
+              className="absolute top-0 w-px h-full bg-gradient-to-b from-transparent via-green-400/30 to-transparent"
+              style={{ left: `${(i * 5) % 100}%` }}
+              animate={{
+                opacity: [0, 1, 0],
+                scaleY: [0, 1, 0]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                delay: i * 0.2,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+
+        {/* 매트릭스 코드 레인 효과 */}
+        <div className="absolute inset-0">
+          {Array.from({ length: 15 }, (_, i) => (
+            <motion.div
+              key={`rain-${i}`}
+              className="absolute top-0 text-green-400 text-sm font-mono opacity-60"
+              style={{ 
+                left: `${(i * 7) % 100}%`,
+                fontSize: `${12 + Math.random() * 8}px`
+              }}
+              animate={{
+                y: [0, window.innerHeight],
+                opacity: [0, 1, 0]
+              }}
+              transition={{
+                duration: 2 + Math.random() * 3,
+                repeat: Infinity,
+                delay: i * 0.3,
+                ease: "linear"
+              }}
+            >
+              {Array.from({ length: 20 }, () => 
+                String.fromCharCode(0x30A0 + Math.random() * 96)
+              ).join('')}
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* 상단 소개 섹션 */}
+      <motion.div 
+        className="z-10 max-w-5xl w-full text-center pt-8 sm:pt-12 md:pt-16"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">
+          <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">안녕하세요, 김찬민입니다</span> 👋
+        </h1>
+        <p className="text-lg sm:text-xl mb-4 sm:mb-6 md:mb-8 text-white">
           <TypingEffect 
             text="크리에이터 이코노미에 관심이 많은 Builder, PM, Writer입니다" 
             speed={80}
@@ -14,241 +125,104 @@ export default function Home() {
             repeatDelay={3000}
           />
         </p>
-        
-        {/* 그래픽 인포그래픽 섹션 */}
-        <div className="mb-8 sm:mb-10 md:mb-12 p-4 sm:p-6 md:p-8 rounded-2xl bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-purple-900/20 border border-blue-100 dark:border-gray-700">
-          {/* 메인 타이틀 */}
-          <div className="text-center mb-6 sm:mb-8 md:mb-10">
-            <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full shadow-lg text-sm sm:text-base">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="animate-pulse sm:w-6 sm:h-6">
-                <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" fill="currentColor"/>
-              </svg>
-              <span className="font-bold text-xs sm:text-sm md:text-base">크리에이터 이코노미 중심의 다면적 역량</span>
-            </div>
-          </div>
+      </motion.div>
 
-          {/* 3개 역할 카드와 연결선 */}
-          <div className="relative">
-            {/* 연결선 SVG - 모바일에서는 숨김 */}
-            <svg className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-32 z-0 hidden md:block" viewBox="0 0 800 200">
-              <defs>
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3"/>
-                  <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.5"/>
-                  <stop offset="100%" stopColor="#06b6d4" stopOpacity="0.3"/>
-                </linearGradient>
-              </defs>
-              <path d="M 150 100 Q 400 50 650 100" stroke="url(#lineGradient)" strokeWidth="3" fill="none" className="animate-pulse"/>
-              <path d="M 150 100 Q 400 150 650 100" stroke="url(#lineGradient)" strokeWidth="3" fill="none" className="animate-pulse" style={{animationDelay: '0.5s'}}/>
-            </svg>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative z-10">
-              {/* Builder 카드 */}
-              <div className="group cursor-pointer">
-                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/30 dark:to-teal-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-emerald-200 dark:border-emerald-700">
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-200 to-teal-200 dark:from-emerald-800 dark:to-teal-800 rounded-full opacity-20"></div>
-                  
-                  <div className="relative mb-4 sm:mb-6">
-                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
-                      <rect x="16" y="16" width="32" height="32" rx="4" fill="url(#builderGradient)" className="animate-pulse"/>
-                      <defs>
-                        <linearGradient id="builderGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#10b981"/>
-                          <stop offset="100%" stopColor="#059669"/>
-                        </linearGradient>
-                      </defs>
-                      <rect x="20" y="20" width="8" height="8" fill="white" opacity="0.9"/>
-                      <rect x="32" y="20" width="8" height="8" fill="white" opacity="0.7"/>
-                      <rect x="20" y="32" width="8" height="8" fill="white" opacity="0.7"/>
-                      <rect x="32" y="32" width="8" height="8" fill="white" opacity="0.9"/>
-                      <path d="M24 44 L40 44" stroke="white" strokeWidth="2"/>
-                    </svg>
-                  </div>
-                  
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-emerald-800 dark:text-emerald-200">Builder</h3>
-                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                    기술적 고찰로<br/>아이디어를 현실로<br/>구현하는 실행력
-                  </p>
-                  
-                  <div className="mt-3 sm:mt-4 space-y-2">
-                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-                      <span>구현력</span>
-                      <span>92%</span>
-                    </div>
-                    <div className="w-full bg-emerald-200 dark:bg-emerald-800 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-emerald-400 to-teal-500 h-2 rounded-full w-[92%] animate-pulse" style={{animationDelay: '0.3s'}}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* PM 카드 */}
-              <div className="group cursor-pointer">
-                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-200 dark:border-blue-700">
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-blue-800 dark:to-indigo-800 rounded-full opacity-20"></div>
-                  
-                  <div className="relative mb-4 sm:mb-6">
-                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
-                      <circle cx="32" cy="32" r="28" fill="url(#pmGradient)" className="animate-pulse"/>
-                      <defs>
-                        <linearGradient id="pmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#3b82f6"/>
-                          <stop offset="100%" stopColor="#1d4ed8"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M20 28 L32 20 L44 28 L44 40 L32 48 L20 40 Z" fill="white" opacity="0.2"/>
-                      <circle cx="26" cy="30" r="2" fill="white"/>
-                      <circle cx="32" cy="26" r="2" fill="white"/>
-                      <circle cx="38" cy="30" r="2" fill="white"/>
-                      <path d="M26 30 L32 26 L38 30" stroke="white" strokeWidth="1.5"/>
-                      <rect x="28" y="36" width="8" height="3" fill="white" opacity="0.8"/>
-                    </svg>
-                  </div>
-                  
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-blue-800 dark:text-blue-200">PM</h3>
-                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                    전략적 사고와<br/>데이터 기반으로<br/>제품 방향성 제시
-                  </p>
-                  
-                  <div className="mt-3 sm:mt-4 space-y-2">
-                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-                      <span>전략성</span>
-                      <span>90%</span>
-                    </div>
-                    <div className="w-full bg-blue-200 dark:bg-blue-800 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-blue-400 to-indigo-500 h-2 rounded-full w-[90%] animate-pulse" style={{animationDelay: '0.6s'}}></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Writer 카드 */}
-              <div className="group cursor-pointer">
-                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-pink-200 dark:border-pink-700">
-                  {/* 배경 데코레이션 */}
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-200 to-rose-200 dark:from-pink-800 dark:to-rose-800 rounded-full opacity-20"></div>
-                  
-                  {/* SVG 아이콘 */}
-                  <div className="relative mb-4 sm:mb-6">
-                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
-                      <circle cx="32" cy="32" r="30" fill="url(#writerGradient)" className="animate-pulse"/>
-                      <defs>
-                        <linearGradient id="writerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#f472b6"/>
-                          <stop offset="100%" stopColor="#ec4899"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M20 32 L26 26 L44 44 L38 50 L20 32" fill="white" opacity="0.9"/>
-                      <path d="M42 46 L46 42" stroke="white" strokeWidth="2"/>
-                      <circle cx="24" cy="28" r="2" fill="#ec4899"/>
-                    </svg>
-                  </div>
-                  
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-pink-800 dark:text-pink-200">Writer</h3>
-                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                    깊이 있는 통찰과<br/>명확한 표현으로<br/>가치 있는 콘텐츠 제작
-                  </p>
-                  
-                  {/* 스킬 바 */}
-                  <div className="mt-3 sm:mt-4 space-y-2">
-                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-                      <span>글쓰기</span>
-                      <span>95%</span>
-                    </div>
-                    <div className="w-full bg-pink-200 dark:bg-pink-800 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-pink-400 to-rose-500 h-2 rounded-full w-[95%] animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 중앙 크리에이터 이코노미 허브 */}
-          <div className="relative mt-8 sm:mt-10 md:mt-12">
-            <div className="text-center">
-              <div className="inline-block relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur opacity-75 animate-pulse"></div>
-                <div className="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-4 rounded-full shadow-2xl">
-                  <div className="flex items-center gap-2 sm:gap-3">
-                    <svg width="24" height="24" viewBox="0 0 32 32" className="animate-pulse sm:w-8 sm:h-8">
-                      <path d="M16 2 L19.09 10.26 L28 11 L19.09 11.74 L16 20 L12.91 11.74 L4 11 L12.91 10.26 L16 2Z" fill="currentColor"/>
-                    </svg>
-                    <span className="text-sm sm:text-base md:text-lg font-bold">크리에이터 이코노미</span>
-                    <svg width="24" height="24" viewBox="0 0 32 32" className="animate-bounce sm:w-8 sm:h-8">
-                      <path d="M8 12 L16 8 L24 12 L20 20 L16 24 L12 20 Z" fill="currentColor" opacity="0.8"/>
-                    </svg>
-                  </div>
-                  <p className="text-xs sm:text-sm mt-1 sm:mt-2 opacity-90">모든 영역을 연결하는 핵심 역량</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* 하단 통계 */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">10+</div>
-              <div className="text-xs text-gray-600 dark:text-gray-400">개발 경험</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">3+</div>
-              <div className="text-xs text-gray-600 dark:text-gray-400">전략 수립</div>
-            </div>
-            <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-pink-600 dark:text-pink-400 mb-1">5+</div>
-              <div className="text-xs text-gray-600 dark:text-gray-400">창의적 프로젝트</div>
-            </div>
-          </div>
+      {/* 중앙 메인 문구 */}
+      <motion.div 
+        className="flex-1 flex items-center justify-center z-10 px-4"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
+        <div className="text-center">
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight"
+            animate={{
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+            style={{
+              backgroundSize: "200% 200%"
+            }}
+          >
+            Creator(Software) is eating the world!
+          </motion.h2>
         </div>
+      </motion.div>
 
+      {/* 하단 메뉴 섹션 */}
+      <motion.div 
+        className="z-10 max-w-5xl w-full pb-8 sm:pb-12 md:pb-16"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.2 }}
+      >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-          <Link
-            href="/projects"
-            className="group rounded-lg border border-transparent px-4 sm:px-5 py-3 sm:py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <h2 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-semibold">
-              프로젝트{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              지금까지 진행했던 프로젝트들을 소개합니다.
-            </p>
-          </Link>
+            <Link
+              href="/projects"
+              className="group block rounded-xl border border-green-400/30 px-6 py-4 transition-all duration-300 hover:border-green-300 hover:bg-green-900/20 backdrop-blur-sm bg-black/20"
+            >
+              <h2 className="mb-3 text-xl sm:text-2xl font-semibold text-green-400">
+                프로젝트{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  -&gt;
+                </span>
+              </h2>
+              <p className="m-0 max-w-[30ch] text-sm text-green-300/80">
+                지금까지 진행했던 프로젝트들을 소개합니다.
+              </p>
+            </Link>
+          </motion.div>
 
-          <Link
-            href="/about"
-            className="group rounded-lg border border-transparent px-4 sm:px-5 py-3 sm:py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <h2 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-semibold">
-              소개{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              제 이력과 기술 스택을 확인해보세요.
-            </p>
-          </Link>
+            <Link
+              href="/about"
+              className="group block rounded-xl border border-cyan-400/30 px-6 py-4 transition-all duration-300 hover:border-cyan-300 hover:bg-cyan-900/20 backdrop-blur-sm bg-black/20"
+            >
+              <h2 className="mb-3 text-xl sm:text-2xl font-semibold text-cyan-400">
+                소개{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  -&gt;
+                </span>
+              </h2>
+              <p className="m-0 max-w-[30ch] text-sm text-cyan-300/80">
+                제 이력과 기술 스택을 확인해보세요.
+              </p>
+            </Link>
+          </motion.div>
 
-          <Link
-            href="/writing-list"
-            className="group rounded-lg border border-transparent px-4 sm:px-5 py-3 sm:py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <h2 className="mb-2 sm:mb-3 text-xl sm:text-2xl font-semibold">
-              글 목록{" "}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className="m-0 max-w-[30ch] text-sm opacity-50">
-              웹3, 크리에이터 이코노미에 대한 생각들을 공유합니다.
-            </p>
-          </Link>
+            <Link
+              href="/writing-list"
+              className="group block rounded-xl border border-blue-400/30 px-6 py-4 transition-all duration-300 hover:border-blue-300 hover:bg-blue-900/20 backdrop-blur-sm bg-black/20"
+            >
+              <h2 className="mb-3 text-xl sm:text-2xl font-semibold text-blue-400">
+                글 목록{" "}
+                <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                  -&gt;
+                </span>
+              </h2>
+              <p className="m-0 max-w-[30ch] text-sm text-blue-300/80">
+                웹3에 대한 생각들을 공유합니다.
+              </p>
+            </Link>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </main>
   )
 }
