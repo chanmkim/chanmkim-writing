@@ -109,7 +109,7 @@ export default function Home() {
 
       {/* 상단 소개 섹션 */}
       <motion.div 
-        className="z-10 max-w-5xl w-full text-center pt-8 sm:pt-12 md:pt-16"
+        className="z-10 max-w-5xl w-full text-center pt-8 sm:pt-12 md:pt-16 min-h-[160px]"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
