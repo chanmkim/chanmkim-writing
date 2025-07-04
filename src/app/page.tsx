@@ -131,14 +131,6 @@ export default function Home() {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">
           <span className="bg-gradient-to-r from-green-400 to-cyan-400 bg-clip-text text-transparent">안녕하세요, 김찬민입니다</span> 👋
         </h1>
-        <p className="text-lg sm:text-xl mb-4 sm:mb-6 md:mb-8 text-white">
-          <TypingEffect 
-            text="크리에이터 이코노미에 관심이 많은 Builder, PM, Writer입니다" 
-            speed={80}
-            className="text-lg sm:text-xl"
-            repeatDelay={3000}
-          />
-        </p>
       </motion.div>
 
       {/* 중앙 메인 문구 */}
@@ -171,7 +163,12 @@ export default function Home() {
               ease: "easeInOut"
             }}
           >
-            Creator(Software) is eating the world!
+            <TypingEffect 
+              text="Creator(Software) is eating the world!"
+              speed={100}
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl"
+              repeatDelay={5000}
+            />
           </motion.h2>
         </div>
       </motion.div>
