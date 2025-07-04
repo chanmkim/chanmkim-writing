@@ -136,17 +136,25 @@ export default function Home() {
       >
         <div className="text-center">
           <motion.h2 
-            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 bg-gradient-to-r from-green-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-4 animate-shimmer bg-clip-text text-transparent leading-tight"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #f1f1f1, #ffffff, #e2e2e2, #ffffff)',
+              backgroundSize: '200% 200%',
+              textShadow: '0 0 15px rgba(255,255,255,0.3), 0 0 25px rgba(255,255,255,0.2)',
+              filter: 'drop-shadow(0 0 3px rgba(255,255,255,0.4))'
+            }}
             animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              filter: [
+                'drop-shadow(0 0 3px rgba(255,255,255,0.4))',
+                'drop-shadow(0 0 12px rgba(255,255,255,0.6))',
+                'drop-shadow(0 0 3px rgba(255,255,255,0.4))'
+              ]
             }}
             transition={{
-              duration: 8,
+              duration: 5,
               repeat: Infinity,
               ease: "easeInOut"
-            }}
-            style={{
-              backgroundSize: "200% 200%"
             }}
           >
             Creator(Software) is eating the world!
