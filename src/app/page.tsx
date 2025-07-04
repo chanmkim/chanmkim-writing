@@ -8,7 +8,7 @@ export default function Home() {
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 md:mb-8">안녕하세요, 김찬민입니다 👋</h1>
         <p className="text-lg sm:text-xl mb-4 sm:mb-6 md:mb-8">
           <TypingEffect 
-            text="크리에이터 이코노미에 관심이 많은 Builder, Creator, PM입니다" 
+            text="크리에이터 이코노미에 관심이 많은 Builder, PM, Writer입니다" 
             speed={80}
             className="text-lg sm:text-xl"
             repeatDelay={3000}
@@ -82,46 +82,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Creator 카드 */}
-              <div className="group cursor-pointer">
-                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-pink-200 dark:border-pink-700">
-                  {/* 배경 데코레이션 */}
-                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-200 to-rose-200 dark:from-pink-800 dark:to-rose-800 rounded-full opacity-20"></div>
-                  
-                  {/* SVG 아이콘 */}
-                  <div className="relative mb-4 sm:mb-6">
-                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
-                      <circle cx="32" cy="32" r="30" fill="url(#creatorGradient)" className="animate-pulse"/>
-                      <defs>
-                        <linearGradient id="creatorGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                          <stop offset="0%" stopColor="#f472b6"/>
-                          <stop offset="100%" stopColor="#ec4899"/>
-                        </linearGradient>
-                      </defs>
-                      <path d="M20 24 L32 18 L44 24 L40 36 L32 42 L24 36 Z" fill="white" opacity="0.9"/>
-                      <circle cx="32" cy="28" r="3" fill="#ec4899"/>
-                      <path d="M28 34 Q32 38 36 34" stroke="#ec4899" strokeWidth="2" fill="none"/>
-                    </svg>
-                  </div>
-                  
-                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-pink-800 dark:text-pink-200">Creator</h3>
-                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
-                    창의적 아이디어와<br/>혁신적 사고로<br/>새로운 가치 창조
-                  </p>
-                  
-                  {/* 스킬 바 */}
-                  <div className="mt-3 sm:mt-4 space-y-2">
-                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
-                      <span>창의성</span>
-                      <span>95%</span>
-                    </div>
-                    <div className="w-full bg-pink-200 dark:bg-pink-800 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-pink-400 to-rose-500 h-2 rounded-full w-[95%] animate-pulse"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* PM 카드 */}
               <div className="group cursor-pointer">
                 <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-blue-200 dark:border-blue-700">
@@ -161,6 +121,46 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+
+              {/* Writer 카드 */}
+              <div className="group cursor-pointer">
+                <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-pink-100 to-rose-100 dark:from-pink-900/30 dark:to-rose-900/30 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-pink-200 dark:border-pink-700">
+                  {/* 배경 데코레이션 */}
+                  <div className="absolute top-2 sm:top-4 right-2 sm:right-4 w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-pink-200 to-rose-200 dark:from-pink-800 dark:to-rose-800 rounded-full opacity-20"></div>
+                  
+                  {/* SVG 아이콘 */}
+                  <div className="relative mb-4 sm:mb-6">
+                    <svg width="48" height="48" viewBox="0 0 64 64" className="mx-auto group-hover:scale-110 transition-transform duration-300 sm:w-16 sm:h-16">
+                      <circle cx="32" cy="32" r="30" fill="url(#writerGradient)" className="animate-pulse"/>
+                      <defs>
+                        <linearGradient id="writerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stopColor="#f472b6"/>
+                          <stop offset="100%" stopColor="#ec4899"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M20 32 L26 26 L44 44 L38 50 L20 32" fill="white" opacity="0.9"/>
+                      <path d="M42 46 L46 42" stroke="white" strokeWidth="2"/>
+                      <circle cx="24" cy="28" r="2" fill="#ec4899"/>
+                    </svg>
+                  </div>
+                  
+                  <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-center text-pink-800 dark:text-pink-200">Writer</h3>
+                  <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 text-center leading-relaxed">
+                    깊이 있는 통찰과<br/>명확한 표현으로<br/>가치 있는 콘텐츠 제작
+                  </p>
+                  
+                  {/* 스킬 바 */}
+                  <div className="mt-3 sm:mt-4 space-y-2">
+                    <div className="flex justify-between text-xs text-gray-600 dark:text-gray-400">
+                      <span>글쓰기</span>
+                      <span>95%</span>
+                    </div>
+                    <div className="w-full bg-pink-200 dark:bg-pink-800 rounded-full h-2">
+                      <div className="bg-gradient-to-r from-pink-400 to-rose-500 h-2 rounded-full w-[95%] animate-pulse"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -188,16 +188,16 @@ export default function Home() {
           {/* 하단 통계 */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-gray-700">
             <div className="text-center">
-              <div className="text-lg sm:text-xl md:text-2xl font-bold text-pink-600 dark:text-pink-400 mb-1">5+</div>
-              <div className="text-xs text-gray-600 dark:text-gray-400">창의적 프로젝트</div>
-            </div>
-            <div className="text-center">
               <div className="text-lg sm:text-xl md:text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">10+</div>
               <div className="text-xs text-gray-600 dark:text-gray-400">개발 경험</div>
             </div>
             <div className="text-center">
               <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400 mb-1">3+</div>
               <div className="text-xs text-gray-600 dark:text-gray-400">전략 수립</div>
+            </div>
+            <div className="text-center">
+              <div className="text-lg sm:text-xl md:text-2xl font-bold text-pink-600 dark:text-pink-400 mb-1">5+</div>
+              <div className="text-xs text-gray-600 dark:text-gray-400">창의적 프로젝트</div>
             </div>
           </div>
         </div>
