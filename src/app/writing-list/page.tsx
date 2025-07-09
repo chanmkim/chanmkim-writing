@@ -51,7 +51,7 @@ export default function WritingListPage() {
             글 목록 📝
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-6">
-            Contents, AI, Crypto에 대해서 이야기합니다
+            Contents, AI, Web3에 대해서 이야기합니다
           </p>
 
           {/* 검색 및 필터 섹션 */}
