@@ -164,7 +164,7 @@ export default function Home() {
             }}
           >
             <TypingEffect 
-              text="Creator(Software) is eating the world!"
+              text="Content(Software) is eating the world!"
               speed={100}
               className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl"
               repeatDelay={5000}
