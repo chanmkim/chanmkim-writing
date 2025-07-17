@@ -57,11 +57,7 @@ export default function About() {
         
         <div className="space-y-4 text-gray-700 dark:text-gray-300">
           <p className="text-lg leading-relaxed">
-            크리에이터 이코노미에 관심을 가지고 있는 Builder입니다.
-          </p>
-          
-          <p className="leading-relaxed">
-            완전히 Web3로 몸담지는 않았지만 간접적으로나마 Creator Economy Founder로서 활동한 이력이 있습니다.
+            컨텐츠 기반의 그로스에 관심을 가지고 있는 Builder입니다.
           </p>
           
           <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
