@@ -1,10 +1,8 @@
 import { Writing } from './types'
-import { writing1Meta } from './1'
 import { writing2Meta } from './2'
 
 // 모든 글 메타데이터를 배열로 export
 export const writings: Writing[] = [
-  writing1Meta,
   writing2Meta
 ]
 
@@ -58,8 +56,6 @@ export function searchWritings(searchTerm: string, category?: string): Writing[]
 // 글 컴포넌트를 가져오는 함수
 export function getWritingComponent(id: string) {
   switch (id) {
-    case 'why_web3_250701':
-      return import('./1').then(module => module.Writing1)
     case 'auth_interface_250703':
       return import('./2').then(module => module.Writing2)
     default:
