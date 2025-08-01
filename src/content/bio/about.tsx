@@ -11,40 +11,32 @@ export default function About() {
         </h2>
         
         <blockquote className="text-xl font-semibold text-gray-700 dark:text-gray-300 mb-6 border-l-4 border-blue-500 pl-4 italic">
-          &ldquo;Creator(Software) is eating the world&rdquo;
+          &ldquo;기술은 이해될 수 있을때만 의미가 있습니다&rdquo;
         </blockquote>
         
         <div className="space-y-4 text-gray-700 dark:text-gray-300 leading-relaxed">
           <p>
-            시간이 지나 이 시기를 되돌아 보았을 때 그 때가 컨텐츠 혁명의 시대였구나...라고 기억될거라는 생각이 있습니다.
+            기술은 이해될 수 있을 때만 의미를 지니고 있습니다.
           </p>
           
           <p>
-            비록 지금은 AI영역에 많은 투자와 노력이 이루어지고 있지만요.
+            기술 자체도 중요하지만 그것이 Marketing적인 관점에서 설명이 되어야만
           </p>
           
           <p>
-            이유는 간단하다고 생각합니다. 웹페이지는 지루하나 컨텐츠는 자극적이라는 것입니다.
+            기술은 비로소 유통되고 상업화가 이뤄질 수 있습니다.
           </p>
           
           <p>
-            AI 모델, AI 에이전트, 지식베이스, 벡터모델링. 모두 흥미로운 개념입니다. 현실을 모두 라벨링한다면 그것을 모두 예측하고 계산할 수 있다는 의미에서 온톨로지철학은 매력을 지닙니다.
+            저는 기술을 잘 이해하고 있는 세일즈맨이자 PM입니다.
           </p>
           
           <p>
-            공급자 관점에서는 무척 흥미롭지만 대중의 관점에서는 지루하다고 생각합니다.
+            오히려 컴퓨터 공학을 전공하지 않았기 때문에 이것이 얼마나 어렵게 느껴질지를 잘 알고 있습니다.
           </p>
           
           <p>
-            결국 사람들은 &lsquo;나를 재밌게 해주고, 부자되게 해주고, 자극적으로 만들어주는 것&rsquo;들에 집중하기 때문입니다.
-          </p>
-          
-          <p>
-            그렇게 시간이 흘러 이 시기를 되돌아 보았을 때 &lsquo;아, 그 때가 AI혁명이 아니라 컨텐츠 혁명의 시기였구나&rsquo;라는 것을 모두가 알게 될 것입니다.
-          </p>
-          
-          <p>
-            그리고 그러한 컨텐츠에 대한 Ownership을 증명할 수 있는 Web3 역시 따라오는 과정이라고 생각합니다.
+            기술 도메인에 대한 소통능력은 복잡한 이해관계자의 조율, 프로젝트의 진행, Go-to-Market 측면에 있어 중요한 요소입니다.
           </p>
         </div>
       </section>
@@ -57,7 +49,7 @@ export default function About() {
         
         <div className="space-y-4 text-gray-700 dark:text-gray-300">
           <p className="text-lg leading-relaxed">
-            컨텐츠 기반의 그로스에 관심을 가지고 있는 Builder입니다.
+            Dev Rel에 강점이 있는 Builer입니다
           </p>
           
           <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">

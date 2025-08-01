@@ -164,7 +164,7 @@ export default function Home() {
             }}
           >
             <TypingEffect 
-              text="Content(Software) is eating the world!"
+              text="Dev Rel에 강점이 있는 PM입니다"
               speed={100}
               className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl"
               repeatDelay={5000}
