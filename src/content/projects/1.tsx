@@ -514,7 +514,7 @@ export default function Project1({ meta }: Project1Props) {
 }
 
 export const meta = {
-  title: "에듀테크 스타트업 - Founder & Product Lead",
+  title: "미디어 스타트업 - Founder & Product Lead",
   description: "오가닉 컨텐츠를 통한 마케팅, 그리고 AI에이전트 기반의 프로덕트로 매출을 만들었습니다",
   order: 1
 }
