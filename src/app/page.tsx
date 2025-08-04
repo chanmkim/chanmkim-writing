@@ -236,7 +236,7 @@ export default function Home() {
                 </span>
               </h2>
               <p className="m-0 max-w-[30ch] text-sm text-blue-300/80">
-                Contents, AI, Web3에 대해 이야기합니다
+                AI, Web3, Growth에 대해 이야기합니다
               </p>
             </Link>
           </motion.div>
