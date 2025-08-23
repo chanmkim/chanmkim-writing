@@ -16,7 +16,7 @@ export default function Project1({ meta }: Project1Props) {
         {/* 헤더 섹션 */}
         <header className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            {meta?.title || "미디어 스타트업 - Founder & Product Lead"}
+            {meta?.title || "AI 스타트업 - Founder & Business Lead"}
           </h1>
           <p className="text-xl opacity-80 leading-relaxed">
             {meta?.description || "오가닉 컨텐츠를 통한 마케팅, 그리고 AI에이전트 기반의 프로덕트로 매출을 만들었습니다"}
@@ -44,7 +44,7 @@ export default function Project1({ meta }: Project1Props) {
             <div className="grid md:grid-cols-2 gap-8">
               <div className="space-y-4">
                 <h3 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
-                  미디어 스타트업 - Founder & Product Lead
+                  AI 스타트업 - Founder & Business Lead
                 </h3>
                 <ul className="space-y-3 text-lg">
                   <li className="flex items-start gap-3">
@@ -514,7 +514,7 @@ export default function Project1({ meta }: Project1Props) {
 }
 
 export const meta = {
-  title: "미디어 스타트업 - Founder & Product Lead",
+  title: "AI 스타트업 - Founder & Business Lead",
   description: "오가닉 컨텐츠를 통한 마케팅, 그리고 AI에이전트 기반의 프로덕트로 매출을 만들었습니다",
   order: 1
 }
